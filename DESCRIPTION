@@ -1,0 +1,7 @@
+Name: pkg-example
+Version: 1.0.0
+Date: 2020-08-27
+Author: GNU Octave <email@address.com>
+Maintainer: GNU Octave <email@address.com>
+Title: A minimal example package for the GNU Octave package extensions.
+Description: A minimal example package for the GNU Octave package extensions.
