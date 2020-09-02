@@ -13,7 +13,7 @@ Of course you can use this package template outside GitHub as well.
 > Just copy the files from the ZIP-archive into your fresh repository
 > or follow the guide below.
 
-Outline:
+**Content:**
 
 1. Setup your package repository
 2. Change your package repository to your needs
