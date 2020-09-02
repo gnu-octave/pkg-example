@@ -1,9 +1,10 @@
 # pkg-example
 
-A minimal example package for the GNU Octave package extensions.
+A minimal [GNU Octave](https://www.octave.org)
+[package example](https://octave.org/doc/latest/Creating-Packages.html).
 
 This package serves as template.  Installing it is of little use.
-In the following, we describe the GNU Octave package development,
+In the following, we describe the Octave package development,
 if you decide to host your package on GitHub.
 Of course you can use this package template outside GitHub as well.
 
@@ -36,13 +37,14 @@ Octave packages.  For a more complete feature documentation, see
 
 ### Necessary files in the root directory of your package
 
-To give an impression what is installed from this package repository, see
-the following graphic.
+The following graphic gives an overview about what is installed
+from this package repository.
 
 ![img](doc/directories.png)
 
-On the left side is a clone of this repository, and on the right side
-the installed package in the default Octave package installation location.
+On the left side of the graphic above is a clone of this repository.
+On the right side the installed package in the default Octave package
+installation location.
 
 - [`COPYING`](COPYING): The license text of the package.  If you are not a
   specialist in software law, we recommend to use a well established software
@@ -51,7 +53,7 @@ the installed package in the default Octave package installation location.
 - [`DESCRIPTION`](DESCRIPTION) and [`INDEX`](INDEX): as defined in
   [the Octave manual](https://octave.org/doc/latest/Creating-Packages.html).
 
-- These three files are stored in a directory `packinfo` and tools like
+- These three files are installed to a directory `packinfo` and tools like
   `pkg describe` use this information:
 
   ```
@@ -75,19 +77,19 @@ the installed package in the default Octave package installation location.
           fortran_demo
   ```
 
-- If additionally a `NEWS` file is provided, the command `news pkg-example`
-  prints them on the screen.
+- `NEWS`: If this file is provided, the command `news pkg-example` prints it
+  on the screen.
 
-- [`doc`](doc): optional folder, all content is copied as is to the package
+- [`doc`](doc): Optional folder.  All content is copied as is to the package
   installation directory.
 
-- [`src`](src): **all source code** (Octave m-files, C/C++, and FORTRAN) goes
+- [`src`](src): **All source code** (Octave m-files, C/C++, and FORTRAN) goes
   here.
 
   - [`src/Makefile`](src/Makefile): during the package installation,
-    `pkg install` will call `make` with its default target (no `make install`,
-    etc.).  Thus specify here how to compile **C/C++ and FORTRAN** source
-    code, see the example.
+    `pkg install` will call `make` with its default target (not
+    `make install`, etc.).  Thus specify here how to compile
+    **C/C++ and FORTRAN** source code, see the example.
 
     > **Note:** Only `.m`, `.mex`, and `.oct` files are finally copied to the
     > package installation directory.
@@ -95,15 +97,17 @@ the installed package in the default Octave package installation location.
 
 ## 3. Installing your package
 
-You can install your package at any time into Octave with the command:
+You can always install the latest development version of your package,
+for example the `master` branch, with the command:
 
     pkg install https://github.com/gnu-octave/pkg-example/archive/master.zip
 
-or for a specific release with the command:
+or for a specific release, for example `1.0.0`, with the command:
 
     pkg install https://github.com/gnu-octave/pkg-example/archive/1.0.0.tar.gz
 
 For Octave 5.2.0 the **verbose** output will look like this:
+
 ```
 >> pkg install -verbose https://github.com/gnu-octave/pkg-example/archive/master.zip
 mkdir (/tmp/oct-1zkcqo)
