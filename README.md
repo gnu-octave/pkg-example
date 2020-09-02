@@ -13,8 +13,15 @@ Of course you can use this package template outside GitHub as well.
 > Just copy the files from the ZIP-archive into your fresh repository
 > or follow the guide below.
 
+Outline:
 
-## 1. Setup your repository
+1. Setup your package repository
+2. Change your package repository to your needs
+3. Install your package
+4. Publish your package
+
+
+## 1. Setup your package repository
 
 - Join the [GNU Octave GitHub organization](https://github.com/gnu-octave)
   by asking for invitation at our
@@ -28,15 +35,12 @@ Of course you can use this package template outside GitHub as well.
   ![img](doc/create_repo_2.png)
 
 
-## 2. Change your repository to your needs
+## 2. Change your package repository to your needs
 
 In this section we give a brief introduction to the files and folders of this
 repository and Octave packages in general.  We do not use all features of
 Octave packages.  For a more complete feature documentation, see
 [the Octave manual](https://octave.org/doc/latest/Creating-Packages.html).
-
-### Necessary files in the root directory of your package
-
 The following graphic gives an overview about what is installed
 from this package repository.
 
@@ -50,7 +54,7 @@ installation location.
   specialist in software law, we recommend to use a well established software
   license.  See <https://spdx.org/licenses/> for examples.
 
-- [`DESCRIPTION`](DESCRIPTION) and [`INDEX`](INDEX): as defined in
+- [`DESCRIPTION`](DESCRIPTION) and [`INDEX`](INDEX): As defined in
   [the Octave manual](https://octave.org/doc/latest/Creating-Packages.html).
 
 - These three files are installed to a directory `packinfo` and tools like
@@ -80,7 +84,7 @@ installation location.
 - `NEWS`: If this file is provided, the command `news pkg-example` prints it
   on the screen.
 
-- [`doc`](doc): Optional folder.  All content is copied as is to the package
+- [`doc`](doc): Optional folder.  All content is copied to the package
   installation directory.
 
 - [`src`](src): **All source code** (Octave m-files, C/C++, and FORTRAN) goes
@@ -95,7 +99,7 @@ installation location.
     > package installation directory.
 
 
-## 3. Installing your package
+## 3. Install your package
 
 You can always install the latest development version of your package,
 for example the `master` branch, with the command:
@@ -132,3 +136,18 @@ copyfile /tmp/oct-1zkcqo/pkg-example-master/src/hello_world.m /tmp/oct-1zkcqo/pk
 copyfile /tmp/oct-1zkcqo/pkg-example-master/src/fortran_demo.oct /tmp/oct-1zkcqo/pkg-example-master/src/oct_demo.oct /tmp/oct-1zkcqo/pkg-example-master/src/mex_demo.mex /tmp/oct-1zkcqo/pkg-example-master/inst/x86_64-pc-linux-gnu-api-v53
 warning: doc_cache_create: unusable help text found in file 'mex_demo'
 ```
+
+
+## 4. Publish your package
+
+> What is the use of your package, if only you know about it?
+
+You have several options to gain attention, ordered by difficulty:
+
+1. Announce your package at <https://octave.discourse.group/>.
+2. Announce your package at <https://wiki.octave.org/Packages>.
+3. Add your package to the
+   [GNU Octave - Package extensions index](https://gnu-octave.github.io/pkg-index/).
+4. Add your package to [Octave Forge](https://octave.sourceforge.io/packages.php)
+   (notice that your package
+   [must meet additional criteria](https://octave.sourceforge.io/developers.php)).
