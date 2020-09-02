@@ -2,14 +2,15 @@
 
 A minimal example package for the GNU Octave package extensions.
 
-This package serves as template.  Installing it is of little use.  In the
-following, we describe the GNU Octave package development, if you decide to
-host your package on GitHub.  Of course you can use this package template
-outside GitHub as well.
+This package serves as template.  Installing it is of little use.
+In the following, we describe the GNU Octave package development,
+if you decide to host your package on GitHub.
+Of course you can use this package template outside GitHub as well.
 
-> We recommend you **not to fork** this repository, as you are probably not
-> interested in upstream changes or pull request.  Just copy the files from the
-> ZIP-archive into your fresh repository.
+> We recommend **not to fork** this repository.
+> You are probably not interested in upstream changes or pull request.
+> Just copy the files from the ZIP-archive into your fresh repository
+> or follow the guide below.
 
 
 ## 1. Setup your repository
@@ -18,8 +19,8 @@ outside GitHub as well.
   by asking for invitation at our
   [Discourse forum](https://octave.discourse.group/t/github-gitlab-organization-for-gnu-octave/178).
 
-- Being part of the GNU Octave GitHub organization, you can easily create a new
-  repository by using this one as template repository.
+- Being part of the GNU Octave GitHub organization, you can easily create
+  a new repository by using this one as template repository.
 
   ![img](doc/create_repo_1.png)
 
@@ -29,8 +30,9 @@ outside GitHub as well.
 ## 2. Change your repository to your needs
 
 In this section we give a brief introduction to the files and folders of this
-repository.  We do not use all features available in Octave packages.  For a
-full documentation, see [the Octave manual](https://octave.org/doc/latest/Creating-Packages.html).
+repository and Octave packages in general.  We do not use all features of
+Octave packages.  For a more complete feature documentation, see
+[the Octave manual](https://octave.org/doc/latest/Creating-Packages.html).
 
 ```
 >> pkg describe -verbose pkg-example

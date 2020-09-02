@@ -1,5 +1,5 @@
 // oct_demo.cc -- example of a dynamically linked function for Octave.
-
+//
 // To compile this file, type the command
 //
 //   mkoctfile oct_demo.cc
@@ -18,10 +18,11 @@
 //   2
 //   3
 //   ans = 3
-
-// Additional samples of real dynamically loaded functions are available in
-// the files of the libinterp/dldfcn directory of the Octave distribution.
-// See also the chapter External Code Interface in the documentation.
+//
+// Additional samples of code are in the examples directory of the Octave
+// distribution.  See also the Octave manual
+//
+//   https://octave.org/doc/v5.2.0/External-Code-Interface.html
 
 #include <iostream>
 
@@ -31,7 +32,7 @@
 // basic set of Octave header files required.  In particular this will define
 // the DEFUN_DLD macro (defun-dld.h) which is used for every user function
 // that is visible to Octave.
-
+//
 // The four arguments to the DEFUN_DLD macro are:
 // 1) The function name as seen in Octave.
 // 2) The variable to hold any inputs (of type octave_value_list)
