@@ -1,7 +1,14 @@
 # pkg-example
 
-A minimal [GNU Octave](https://www.octave.org)
-[package example](https://octave.org/doc/latest/Creating-Packages.html).
+A minimal [package example](https://octave.org/doc/latest/Creating-Packages.html)
+for [GNU Octave](https://www.octave.org).  Contained examples are:
+
+- `hello_world.m`: Octave/Matlab code
+- `fortran_demo.cc` / `fortran_my_ddot.f`: FORTRAN code
+  ([BLAS DDOT](https://github.com/Reference-LAPACK/lapack/blob/master/BLAS/SRC/ddot.f))
+  called by the oct-interface
+- `oct_demo.cc`: C++ code called by the oct-interface
+- `mex_demo.cc`: C code called by the mex-interface
 
 This package serves as template.  Installing it is of little use.
 In the following, we describe the Octave package development,
