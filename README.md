@@ -48,12 +48,12 @@ In this section we give a brief introduction to the files and folders of this
 repository and Octave packages in general.  We do not use all features of
 Octave packages.  For a more complete feature documentation, see
 [the Octave manual](https://octave.org/doc/latest/Creating-Packages.html).
-The following graphic gives an overview about what is installed
+The following figure gives an overview about what is installed
 from this package repository.
 
 ![img](doc/directories.png)
 
-On the left side of the graphic above is a clone of this repository.
+On the left side of the figure above is a clone of this repository.
 On the right side the installed package in the default Octave package
 installation location.
 
@@ -61,10 +61,10 @@ installation location.
   specialist in software law, we recommend to use a well established software
   license.  See <https://spdx.org/licenses/> for examples.
 
-- [`DESCRIPTION`](DESCRIPTION) and [`INDEX`](INDEX): As defined in
+- [`DESCRIPTION`](DESCRIPTION): As defined in
   [the Octave manual](https://octave.org/doc/latest/Creating-Packages.html).
 
-- These three files are installed to a directory `packinfo` and tools like
+- These two files are installed to a directory `packinfo` and tools like
   `pkg describe` use this information:
 
   ```
@@ -73,29 +73,31 @@ installation location.
   Package name:
           pkg-example
   Version:
-          1.0.0
+          1.1.0
   Short description:
-          Minimal example package to demonstrate the Octave package  extensions.  It shows how to organize Octave, C/C++, and FORTRAN code within  a package and to properly compile it.
+          Minimal example package to demonstrate the Octave package  extensions.  It shows how to organize Octave, C/C++,and FORTRAN code within  a package and to properly compile it.
+  Depends on:
+          octave >= 4.0.0
+  Depended on by:
+
   Status:
           Not loaded
   ---
   Provides:
-  Octave code
+  package
           hello_world
-  C/C++/FORTRAN code
-          mex_demo
-          oct_demo
           fortran_demo
+          oct_demo
   ```
 
-- `NEWS`: If this file is provided, the command `news pkg-example` prints it
-  on the screen.
+- `NEWS`: If this file is provided,
+  the command `news pkg-example` prints it on the screen.
 
-- [`doc`](doc): Optional folder.  All content is copied to the package
-  installation directory.
+- [`doc`](doc): Optional folder.
+  All content is copied to the package installation directory.
 
-- [`src`](src): **All source code** (Octave m-files, C/C++, and FORTRAN) goes
-  here.
+- [`src`](src): **All source code** (Octave m-files, C/C++, and FORTRAN)
+  goes here.
 
   - [`src/Makefile`](src/Makefile): during the package installation,
     `pkg install` will call `make` with its default target (not
@@ -149,12 +151,8 @@ warning: doc_cache_create: unusable help text found in file 'mex_demo'
 
 > What is the use of your package, if only you know about it?
 
-You have several options to gain attention, ordered by difficulty:
+You have several options to gain attention for your package:
 
-1. Announce your package at <https://octave.discourse.group/>.
-2. Announce your package at <https://wiki.octave.org/Packages>.
-3. Add your package to the
-   [GNU Octave - Package extensions index](https://gnu-octave.github.io/pkg-index/).
-4. Add your package to [Octave Forge](https://octave.sourceforge.io/packages.php)
-   (notice that your package
-   [must meet additional criteria](https://octave.sourceforge.io/developers.php)).
+- Add your package to [Octave Packages](https://gnu-octave.github.io/packages/).
+- Announce your package at <https://octave.discourse.group/>.
+- Announce your package at <https://wiki.octave.org/Packages>.
