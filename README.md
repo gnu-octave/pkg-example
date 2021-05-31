@@ -111,38 +111,38 @@ installation location.
 ## 3. Install your package
 
 You can always install the latest development version of your package,
-for example the `master` branch, with the command:
+for example the `main` branch, with the command:
 
-    pkg install https://github.com/gnu-octave/pkg-example/archive/master.zip
+    pkg install "https://github.com/gnu-octave/pkg-example/archive/main.zip"
 
 or for a specific release, for example `1.0.0`, with the command:
 
-    pkg install https://github.com/gnu-octave/pkg-example/archive/1.0.0.tar.gz
+    pkg install "https://github.com/gnu-octave/pkg-example/archive/1.0.0.tar.gz"
 
-For Octave 5.2.0 the **verbose** output will look like this:
+For Octave 6.2.0 the **verbose** output will look like this:
 
 ```
->> pkg install -verbose https://github.com/gnu-octave/pkg-example/archive/master.zip
-mkdir (/tmp/oct-1zkcqo)
-unzip (/tmp/oct-4WoyUf/master.zip, /tmp/oct-1zkcqo)
-make: Entering directory '/tmp/oct-1zkcqo/pkg-example-master/src'
+>> pkg install -verbose "https://github.com/gnu-octave/pkg-example/archive/main.zip"
+mkdir (/tmp/oct-zxAtnM)
+unzip (/tmp/oct-uAfE0u/main.zip, /tmp/oct-zxAtnM)
+make: Entering directory '/tmp/oct-zxAtnM/pkg-example-main/src'
 
-/usr/bin/mkoctfile-5.2.0 --verbose       oct_demo.cc
-g++ -c  -fPIC -I/usr/include/octave-5.2.0/octave/.. -I/usr/include/octave-5.2.0/octave  -pthread -fopenmp -g -O2    oct_demo.cc -o /tmp/oct-5tWsHS.o
-g++ -I/usr/include/octave-5.2.0/octave/.. -I/usr/include/octave-5.2.0/octave  -pthread -fopenmp -g -O2 -shared -Wl,-Bsymbolic   -o oct_demo.oct  /tmp/oct-5tWsHS.o
+/usr/bin/mkoctfile-6.2.0 --verbose       oct_demo.cc
+g++ -c  -fPIC -I/usr/include/octave-6.2.0/octave/.. -I/usr/include/octave-6.2.0/octave  -pthread -fopenmp -g -O2    oct_demo.cc -o /tmp/oct-PF0ery.o
+g++ -I/usr/include/octave-6.2.0/octave/.. -I/usr/include/octave-6.2.0/octave  -pthread -fopenmp -g -O2  -o oct_demo.oct  /tmp/oct-PF0ery.o  -shared -Wl,-Bsymbolic
 
-/usr/bin/mkoctfile-5.2.0 --verbose --mex mex_demo.c
-gcc -c  -fPIC -I/usr/include/octave-5.2.0/octave/.. -I/usr/include/octave-5.2.0/octave  -pthread -fopenmp -g -O2   -I.  -DMEX_DEBUG mex_demo.c -o /tmp/oct-K2WUDD.o
-g++ -I/usr/include/octave-5.2.0/octave/.. -I/usr/include/octave-5.2.0/octave  -pthread -fopenmp -g -O2 -shared -Wl,-Bsymbolic   -o mex_demo.mex  /tmp/oct-K2WUDD.o
+/usr/bin/mkoctfile-6.2.0 --verbose --mex mex_demo.c
+gcc -c  -fPIC -I/usr/include/octave-6.2.0/octave/.. -I/usr/include/octave-6.2.0/octave  -pthread -fopenmp -g -O2   -I.  -DMEX_DEBUG mex_demo.c -o /tmp/oct-HfunVf.o
+g++ -I/usr/include/octave-6.2.0/octave/.. -I/usr/include/octave-6.2.0/octave  -pthread -fopenmp -g -O2  -o mex_demo.mex  /tmp/oct-HfunVf.o  -shared -Wl,-Bsymbolic
 
-/usr/bin/mkoctfile-5.2.0 --verbose       fortran_demo.cc fortran_my_ddot.f
-gfortran -c -fPIC -g -O2 -std=legacy -fdefault-integer-8    fortran_my_ddot.f -o /tmp/oct-9riFAT.o
-g++ -c  -fPIC -I/usr/include/octave-5.2.0/octave/.. -I/usr/include/octave-5.2.0/octave  -pthread -fopenmp -g -O2    fortran_demo.cc -o /tmp/oct-NmFcVy.o
-g++ -I/usr/include/octave-5.2.0/octave/.. -I/usr/include/octave-5.2.0/octave  -pthread -fopenmp -g -O2 -shared -Wl,-Bsymbolic   -o fortran_demo.oct  /tmp/oct-9riFAT.o /tmp/oct-NmFcVy.o
-make: Leaving directory '/tmp/oct-1zkcqo/pkg-example-master/src'
+/usr/bin/mkoctfile-6.2.0 --verbose       fortran_demo.cc fortran_my_ddot.f
+gfortran -c -fPIC -g -O2 -std=legacy -fdefault-integer-8    fortran_my_ddot.f -o /tmp/oct-gZtHRW.o
+g++ -c  -fPIC -I/usr/include/octave-6.2.0/octave/.. -I/usr/include/octave-6.2.0/octave  -pthread -fopenmp -g -O2    fortran_demo.cc -o /tmp/oct-9fcW8V.o
+g++ -I/usr/include/octave-6.2.0/octave/.. -I/usr/include/octave-6.2.0/octave  -pthread -fopenmp -g -O2  -o fortran_demo.oct  /tmp/oct-gZtHRW.o /tmp/oct-9fcW8V.o  -shared -Wl,-Bsymbolic
+make: Leaving directory '/tmp/oct-zxAtnM/pkg-example-main/src'
 
-copyfile /tmp/oct-1zkcqo/pkg-example-master/src/hello_world.m /tmp/oct-1zkcqo/pkg-example-master/inst
-copyfile /tmp/oct-1zkcqo/pkg-example-master/src/fortran_demo.oct /tmp/oct-1zkcqo/pkg-example-master/src/oct_demo.oct /tmp/oct-1zkcqo/pkg-example-master/src/mex_demo.mex /tmp/oct-1zkcqo/pkg-example-master/inst/x86_64-pc-linux-gnu-api-v53
+copyfile /tmp/oct-zxAtnM/pkg-example-main/src/hello_world.m/tmp/oct-zxAtnM/pkg-example-main/inst
+copyfile /tmp/oct-zxAtnM/pkg-example-main/src/fortran_demo.oct /tmp/oct-zxAtnM/pkg-example-main/src/oct_demo.oct /tmp/oct-zxAtnM/pkg-example-main/src/mex_demo.mex /tmp/oct-zxAtnM/pkg-example-main/inst/x86_64-pc-linux-gnu-api-v55
 warning: doc_cache_create: unusable help text found in file 'mex_demo'
 ```
 
