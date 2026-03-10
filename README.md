@@ -9,6 +9,7 @@ for [GNU Octave](https://www.octave.org).  Contained examples are:
   called by the oct-interface
 - `oct_demo.cc`: C++ code called by the oct-interface
 - `mex_demo.cc`: C code called by the mex-interface
+- `mex_demo.m`: Octave/Matlab help text for the mex-interface
 
 This package serves as template.  Installing it is of little use.
 In the following, we describe the Octave package development,
@@ -93,6 +94,11 @@ installation location.
 - `NEWS`: If this file is provided,
   the command `news pkg-example` prints it on the screen.
 
+- `post_install.m`: If this file is provided, it is run
+   as part of the install proceder for any additional install
+   steps that may be needed. The example one provided here copies
+   the mex_demo.m help file to the correct directory.
+
 - [`doc`](doc): Optional folder.
   All content is copied to the package installation directory.
 
@@ -106,6 +112,9 @@ installation location.
 
     > **Note:** Only `.m`, `.mex`, and `.oct` files are finally copied to the
     > package installation directory.
+
+  - If a configure script exists in the package src directory, it will be
+    run before calling the make on the makefile.
 
 
 ## 3. Install your package
@@ -141,9 +150,8 @@ g++ -c  -fPIC -I/usr/include/octave-6.2.0/octave/.. -I/usr/include/octave-6.2.0/
 g++ -I/usr/include/octave-6.2.0/octave/.. -I/usr/include/octave-6.2.0/octave  -pthread -fopenmp -g -O2  -o fortran_demo.oct  /tmp/oct-gZtHRW.o /tmp/oct-9fcW8V.o  -shared -Wl,-Bsymbolic
 make: Leaving directory '/tmp/oct-zxAtnM/pkg-example-main/src'
 
-copyfile /tmp/oct-zxAtnM/pkg-example-main/src/hello_world.m/tmp/oct-zxAtnM/pkg-example-main/inst
+copyfile /tmp/oct-zxAtnM/pkg-example-main/src/hello_world.m /tmp/oct-zxAtnM/pkg-example-main/src/mex_demo.m /tmp/oct-zxAtnM/pkg-example-main/inst
 copyfile /tmp/oct-zxAtnM/pkg-example-main/src/fortran_demo.oct /tmp/oct-zxAtnM/pkg-example-main/src/oct_demo.oct /tmp/oct-zxAtnM/pkg-example-main/src/mex_demo.mex /tmp/oct-zxAtnM/pkg-example-main/inst/x86_64-pc-linux-gnu-api-v55
-warning: doc_cache_create: unusable help text found in file 'mex_demo'
 ```
 
 
